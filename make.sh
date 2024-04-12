@@ -235,7 +235,7 @@ mkdir "$GITHUB_WORKSPACE"/images/product/app/MiAONService
 sudo cp "$GITHUB_WORKSPACE"/"${device}"_files/MiAONService.apk "$GITHUB_WORKSPACE"/images/product/app/MiAONService
 # 统一 build.prop
 echo -e "${Red}- 统一 build.prop"
-sudo sed -i 's/ro.build.user=[^*]*/ro.build.user=YuKongA/' "$GITHUB_WORKSPACE"/images/system/system/build.prop
+sudo sed -i 's/ro.build.user=[^*]*/ro.build.user=Nie/' "$GITHUB_WORKSPACE"/images/system/system/build.prop
 for port_build_prop in $(sudo find "$GITHUB_WORKSPACE"/images/ -type f -name "build.prop"); do
   sudo sed -i 's/build.date=[^*]*/build.date='"${build_time}"'/' "${port_build_prop}"
   sudo sed -i 's/build.date.utc=[^*]*/build.date.utc='"${build_utc}"'/' "${port_build_prop}"
@@ -377,7 +377,7 @@ echo -e "${Red}- 定制 ROM 包名"
 md5=$(md5sum "$GITHUB_WORKSPACE"/zip/miui_${device}_${port_os_version}.zip)
 echo "MD5=${md5:0:32}" >>$GITHUB_ENV
 zip_md5=${md5:0:10}
-rom_name="miui_VERMEER_${port_os_version}_${zip_md5}_${android_version}.0_YuKongA.zip"
+rom_name="miui_VERMEER_${port_os_version}_${zip_md5}_${android_version}.0_Nie.zip"
 sudo mv "$GITHUB_WORKSPACE"/zip/miui_${device}_${port_os_version}.zip "$GITHUB_WORKSPACE"/zip/"${rom_name}"
 echo "rom_name=$rom_name" >>$GITHUB_ENV
 ### 输出卡刷包结束

@@ -261,7 +261,7 @@ for app in "${apps[@]}"; do
 done
 # 分辨率修改
 echo -e "${Red}- 分辨率修改"
-sudo sed -i 's/persist.miui.density_v2=[^*]*/persist.miui.density_v2=480/' "$GITHUB_WORKSPACE"/images/product/etc/build.prop
+sudo sed -i 's/persist.miui.density_v2=[^*]*/persist.miui.density_v2=560/' "$GITHUB_WORKSPACE"/images/product/etc/build.prop
 # 替换相机
 echo -e "${Red}- 替换相机"
 sudo rm -rf "$GITHUB_WORKSPACE"/images/product/priv-app/MiuiCamera/*
